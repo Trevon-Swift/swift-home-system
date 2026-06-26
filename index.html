@@ -155,9 +155,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:v
   <div class="season-nav" id="season-nav"></div>
   <div class="print-links">
     <span style="font-size:11px;color:var(--muted);align-self:center;">Print cards →</span>
-    <a class="print-link" href="cards/seasonal.html" target="_blank">📋 Seasonal checklist</a>
-    <a class="print-link" href="cards/food-safety.html" target="_blank">🛡 Food safety</a>
-    <a class="print-link" href="cards/kitchen-reset.html" target="_blank">✅ Kitchen reset</a>
+    <a class="print-link" href="cards/seasonal.pdf" target="_blank">📋 Seasonal checklist</a>
+    <a class="print-link" href="cards/food-safety.pdf" target="_blank">🛡 Food safety</a>
+    <a class="print-link" href="cards/kitchen-reset.pdf" target="_blank">✅ Kitchen reset</a>
   </div>
   <div id="season-content"></div>
 </div>
@@ -389,7 +389,7 @@ function renderYearBar() {
   ).join("")+`<div style="position:absolute;left:calc(${DAY_PCT}% - 1px);top:0;bottom:0;width:2px;background:#fff;border-radius:1px;box-shadow:0 0 0 1px rgba(0,0,0,.15);pointer-events:none;"></div>`;
   $("year-bar").style.position="relative";
   $("year-labels").innerHTML = segs.map(sg=>
-    `<div class="yl${currentSeason===sg.s?" active":""}" style="flex:1;">${sg.label}</div>`
+    `<div class="yl${currentSeason===sg.s?" active":""}" style="flex:1;">${SEASON_META[sg.s].label}</div>`
   ).join("");
 }
 
